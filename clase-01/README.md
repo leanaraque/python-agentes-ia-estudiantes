@@ -17,7 +17,8 @@ Corresponde a la **Etapa 1 del Proyecto Integrador** (consignas 3, 4 y 5). Las c
 | Carpeta | Contenido |
 |---|---|
 | [`inicio/`](./inicio) | El punto de partida: el diccionario de preguntas frecuentes listo para copiar |
-| [`final/`](./final) | `assistant.py` como quedó al terminar la clase |
+| [`pasos/`](./pasos) | El archivo completo en cada paso de la clase (`paso-1.py` a `paso-6.py`). Si te perdiste en algún momento, copia el paso completo y sigue desde ahí. |
+| [`final/`](./final) | `assistant.py` como quedó al terminar la clase, **comentado línea por línea** para repasar en casa |
 
 ## Cómo ejecutarlo
 
@@ -29,13 +30,14 @@ Corresponde a la **Etapa 1 del Proyecto Integrador** (consignas 3, 4 y 5). Las c
    python assistant.py
    ```
 
-4. Probar con estas consultas:
+4. Cuando aparece `Tú:`, el programa está esperando: escribe la consulta y aprieta Enter. Prueba con estas:
 
    | Escribe | Qué pasa |
    |---|---|
    | `¿Cuál es el horario?` | Responde el horario del local |
    | `Quiero hacer un service` | Responde los precios |
    | (Enter sin escribir nada) | Muestra un error controlado y sigue funcionando |
+   | `¿Tienen alquiler?` | Responde el precio del alquiler |
    | `¿A qué hora abren?` | No entiende: las reglas solo comparan palabras (lo resolvemos en la Clase 3) |
    | `salir` | Se despide y dice cuántas consultas respondió |
 
