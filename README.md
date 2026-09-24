@@ -17,6 +17,22 @@ Durante el curso vamos a construir, clase a clase, **un asistente virtual para R
 
    Tiene que mostrar `Python 3.12.x`.
 
+## Descargas y documentación
+
+| Herramienta | Descarga | Documentación |
+|---|---|---|
+| Python 3.12 | [python.org/downloads](https://www.python.org/downloads/) | [Tutorial oficial en español](https://docs.python.org/es/3/tutorial/) |
+| VS Code | [code.visualstudio.com](https://code.visualstudio.com/) | [Documentación de VS Code](https://code.visualstudio.com/docs) |
+| Extensión Python | Dentro de VS Code: Extensiones > buscar "Python" (Microsoft) | [Python en VS Code](https://code.visualstudio.com/docs/python/python-tutorial) |
+
+### Problemas frecuentes al instalar (Windows)
+
+| Síntoma | Solución |
+|---|---|
+| `python` no se reconoce como comando | Reinstalar Python marcando **"Add python.exe to PATH"**. Mientras tanto, probar `py --version`. |
+| Al escribir `python` se abre la Microsoft Store | Buscar en Windows "Administrar alias de ejecución de aplicaciones" y desactivar los de Python. |
+| En macOS, `python` no existe | Usar `python3` en lugar de `python`. |
+
 ## Cómo está organizado
 
 Cada clase tiene su carpeta (`clase-01`, `clase-02`, ...) con:
