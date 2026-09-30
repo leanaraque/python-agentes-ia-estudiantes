@@ -1,0 +1,7 @@
+# .gitignore: lista de archivos y carpetas que git NO tiene que subir al repositorio.
+# El entorno virtual: pesa mucho y se recrea con requirements.txt.
+.venv/
+# Las variables de entorno: pueden tener claves privadas.
+.env
+# Archivos que Python genera solo para ir más rápido.
+__pycache__/
