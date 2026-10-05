@@ -1,0 +1,30 @@
+{
+    "1041": {
+        "cliente": "Laura",
+        "bicicleta": "Mountain bike rodado 29",
+        "trabajo": "Service completo",
+        "estado": "entregada",
+        "detalle": "Retirada el lunes."
+    },
+    "1042": {
+        "cliente": "Diego",
+        "bicicleta": "Urbana rodado 28",
+        "trabajo": "Cambio de cámara y frenos",
+        "estado": "lista para retirar",
+        "detalle": "Se puede retirar en el horario del local."
+    },
+    "1043": {
+        "cliente": "Ana",
+        "bicicleta": "Ruta rodado 28",
+        "trabajo": "Cambio de cadena y piñón",
+        "estado": "en reparación",
+        "detalle": "Esperando el repuesto (cadena de 11 velocidades). Llega el viernes; la bici estaría lista el lunes."
+    },
+    "1044": {
+        "cliente": "Martín",
+        "bicicleta": "Plegable rodado 20",
+        "trabajo": "Service básico",
+        "estado": "recibida",
+        "detalle": "Ingresó hoy; el taller la revisa en las próximas 48 horas hábiles."
+    }
+}
