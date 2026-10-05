@@ -72,6 +72,8 @@ Necesitas alrededor de 5 GB libres en el disco. Funciona sin placa de video (má
 
    Alternativa: descargar `OllamaSetup.exe` desde [ollama.com/download](https://ollama.com/download) e instalarlo.
 
+   En la prueba del curso, la instalación tardó unos 4 minutos (depende de tu conexión).
+
 2. **Abrir una terminal nueva** y verificar:
 
    ```powershell
@@ -86,7 +88,7 @@ Necesitas alrededor de 5 GB libres en el disco. Funciona sin placa de video (má
 
    Si tu conexión es lenta, puedes usar `gemma3:1b` (815 MB) y poner ese nombre en `OLLAMA_MODEL`.
 
-4. **Probarlo en la terminal** (sin internet). Se sale con `/bye`:
+4. **Probarlo en la terminal** (sin internet). La primera respuesta puede tardar casi un minuto, porque carga el modelo en memoria; las siguientes son rápidas. Se sale con `/bye`:
 
    ```powershell
    ollama run qwen2.5:1.5b
@@ -98,6 +100,8 @@ Necesitas alrededor de 5 GB libres en el disco. Funciona sin placa de video (má
 
 7. Vuelve a `LLM_PROVIDER=groq` para la próxima clase.
 
+Para desinstalarlo: **Configuración > Aplicaciones > Ollama > Desinstalar**, y después borrar las carpetas `.ollama` (en tu carpeta de usuario, alrededor de 1 GB de modelos) y `AppData\Local\Ollama`, que el desinstalador no borra.
+
 ### Problemas frecuentes
 
 | Síntoma | Solución |
@@ -106,6 +110,7 @@ Necesitas alrededor de 5 GB libres en el disco. Funciona sin placa de video (má
 | `Error controlado: no pude hablar con el modelo (... localhost ... 11434 ...)` | Ollama no está corriendo: abre la aplicación Ollama desde el menú Inicio |
 | `Error controlado: el modelo no devolvió un JSON válido.` | Los modelos chicos fallan más con el formato: vuelve a preguntar o usa Groq |
 | Responde muy lento | Normal en computadoras sin placa de video: es el costo de correr el modelo en tu equipo |
+| `404 Not Found` de Groq después de editar el `.env` | Una línea nueva quedó pegada a la anterior: deja una variable por línea |
 
 ## Tarea (1 hora como máximo)
 
