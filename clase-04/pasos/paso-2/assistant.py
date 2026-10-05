@@ -1,0 +1,72 @@
+import os
+
+from dotenv import load_dotenv
+
+from llm_client import MissingAPIKeyError, call_language_model
+from weather import get_weather_report
+
+load_dotenv()
+
+ASSISTANT_NAME = os.getenv("ASSISTANT_NAME", "Asistente")
+
+FAQ = {
+    "horario": "Abrimos de lunes a viernes de 9 a 13 y de 16 a 20, y los sábados de 9 a 13.",
+    "dirección": "Estamos en Av. del Sur 1234.",
+    "service": "El service básico cuesta $25.000 y el completo $45.000.",
+    "demora": "El taller entrega las bicicletas en 48 horas hábiles.",
+    "alquiler": "Alquilamos bicicletas urbanas a $8.000 por día.",
+}
+
+
+def build_system_prompt():
+    """Arma las instrucciones para el modelo con la información del FAQ."""
+    business_info = ""
+    for answer in FAQ.values():
+        business_info += f"- {answer}\n"
+    return f"""Eres {ASSISTANT_NAME}, el asistente virtual de Rodados Sur, una tienda y taller de bicicletas de barrio.
+
+Tu tarea es responder las consultas de los clientes sobre el negocio.
+
+### Información del negocio
+{business_info}
+### Reglas
+- Responde solo con la información del negocio. Si no la tienes, di que se lo pasas a Marta, la dueña.
+- No inventes precios, horarios ni datos.
+- Responde en español, con tono cordial, en un máximo de 3 oraciones."""
+
+
+def get_user_input():
+    """Pide un mensaje por consola y lo devuelve."""
+    return input("Tú: ")
+
+
+def call_ai_model(prompt):
+    """Responde la consulta: el clima con weather.py; todo lo demás, con el modelo de lenguaje."""
+    text = prompt.strip().lower()
+    if not text:
+        raise ValueError("el mensaje no puede estar vacío.")
+    if "clima" in text or "llueve" in text or "lluvia" in text:
+        return get_weather_report()
+    return call_language_model(prompt, build_system_prompt())
+
+
+def main():
+    print(f"Hola, soy {ASSISTANT_NAME}, el asistente de Rodados Sur.")
+    print("Escribe 'salir' para terminar.")
+    history = []
+    while True:
+        message = get_user_input()
+        if message.strip().lower() == "salir":
+            break
+        try:
+            answer = call_ai_model(message)
+        except (ValueError, ConnectionError, MissingAPIKeyError) as error:
+            print(f"{ASSISTANT_NAME}: Error controlado: {error}")
+            continue
+        history.append(message)
+        print(f"{ASSISTANT_NAME}: {answer}")
+    print(f"{ASSISTANT_NAME}: ¡Hasta luego! Consultas respondidas hoy: {len(history)}.")
+
+
+if __name__ == "__main__":
+    main()
