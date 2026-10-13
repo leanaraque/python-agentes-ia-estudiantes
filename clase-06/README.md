@@ -52,7 +52,8 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-```python -c "import sys, os, dotenv, gtts, pyttsx3, speech_recognition as sr; dotenv.load_dotenv(); print(sys.prefix); print('Clave de Groq cargada:', bool(os.getenv('GROQ_API_KEY'))); print('Dispositivos de audio:', len(sr.Microphone.list_microphone_names())); print('Entorno listo')"
+```powershell
+python -c "import sys, os, dotenv, gtts, pyttsx3, speech_recognition as sr; dotenv.load_dotenv(); print(sys.prefix); print('Clave de Groq cargada:', bool(os.getenv('GROQ_API_KEY'))); print('Dispositivos de audio:', len(sr.Microphone.list_microphone_names())); print('Entorno listo')"
 ```
 
 Por último: **Ctrl + Shift + P** > `Python: Select Interpreter` > **('.venv': venv)**. El `.env` no cambia: Whisper usa la misma `GROQ_API_KEY`.
