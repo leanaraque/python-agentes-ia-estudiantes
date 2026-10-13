@@ -1,0 +1,25 @@
+# Las librerías de las clases anteriores no cambian. Las nuevas de hoy:
+# - gTTS: texto a voz con la voz de Google (en la nube; genera un mp3).
+# - pyttsx3: texto a voz con las voces instaladas en Windows (sin internet).
+#   Necesita comtypes, pywin32 y pypiwin32 para hablar con Windows.
+# - SpeechRecognition: captura la voz del micrófono (y sabe cuándo terminaste de hablar).
+# - PyAudio: el "enchufe" entre Python y el micrófono.
+#   Todavía no tiene instalador para Python 3.14: la condición del final le dice a pip
+#   que lo saltee en esa versión (la clase sigue funcionando, sin micrófono).
+# click, colorama y typing_extensions son dependencias de las anteriores.
+certifi==2026.7.22
+charset-normalizer==3.5.1
+click==8.1.8
+colorama==0.4.6
+comtypes==1.4.17
+gTTS==2.5.4
+idna==3.20
+PyAudio==0.2.14; python_version < "3.14"
+pypiwin32==223
+python-dotenv==1.2.1
+pyttsx3==2.99
+pywin32==312
+requests==2.32.5
+SpeechRecognition==3.17.0
+typing_extensions==4.16.0
+urllib3==2.6.3

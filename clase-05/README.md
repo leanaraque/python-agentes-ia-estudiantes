@@ -79,3 +79,5 @@ En la terminal vas a ver cada herramienta que usa: `[herramienta] get_order_stat
    Probar con "¿Cuánto me sale alquilar una bici por 3 días?".
 2. Anotar una conversación en la que el agente se haya equivocado y por qué crees que pasó.
 3. Leer en la plataforma "IA conversacional y voz" (Módulo 3).
+
+**Tarea resuelta:** [`tarea-resuelta/tools.py`](./tarea-resuelta/tools.py) (la herramienta `calculate_rental_cost`).
