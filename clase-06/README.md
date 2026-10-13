@@ -35,7 +35,7 @@ New-Item -ItemType Directory clase-06
 Copy-Item clase-05\*.py, clase-05\ordenes.json, clase-05\requirements.txt, clase-05\.env, clase-05\.env.example, clase-05\.gitignore clase-06
 ```
 
-En VS Code: **File > Open Folder** > `clase-06`. Reemplaza el contenido de `requirements.txt` por el de [`pasos/paso-1/requirements.txt`](./pasos/paso-1/requirements.txt) y, en una terminal nueva:
+En VS Code: **File > Open Folder** > `clase-06`. Reemplaza el contenido de `requirements.txt` por el de [`pasos/paso-1/requirements.txt`](./pasos/paso-1/requirements.txt), **guárdalo (Ctrl + S)** y, en una terminal nueva:
 
 ```powershell
 python -m venv .venv
@@ -73,6 +73,7 @@ Por último: **Ctrl + Shift + P** > `Python: Select Interpreter` > **('.venv': v
 
 | Síntoma | Solución |
 |---|---|
+| `ModuleNotFoundError: No module named 'gtts'` | Se instaló el `requirements.txt` de la Clase 5. Reemplaza su contenido por el de [`pasos/paso-1/requirements.txt`](./pasos/paso-1/requirements.txt), guarda (**Ctrl + S**) y repite `python -m pip install -r requirements.txt`. Tiene que decir `Successfully installed` con 16 librerías |
 | No se escucha a Rayo | Revisa el volumen y la salida de audio de Windows |
 | Rayo habla con acento inglés | Tu Windows no tiene voces en español: `python speech_output.py` muestra las voces instaladas |
 | `pip install` falla en PyAudio | Con Python 3.14 se saltea solo (todavía no tiene instalador). Sin PyAudio todo funciona menos el micrófono: en modo voz, escribe |
