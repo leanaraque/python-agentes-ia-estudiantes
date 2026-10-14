@@ -43,6 +43,14 @@ python -m pip install -r requirements.txt
 
 (Si la descarga falla: abre [`requirements.txt`](./requirements.txt), botón **Download raw file**, y guárdalo en `clase-07`.)
 
+Para comprobar que todo está bien:
+
+```powershell
+python -c "import sys, os, dotenv, gtts, PIL, moviepy; dotenv.load_dotenv(); print(sys.prefix); print('Clave de Groq cargada:', bool(os.getenv('GROQ_API_KEY'))); print('Pillow', PIL.__version__); print('Entorno listo')"
+```
+
+Tiene que mostrar la ruta de la caja (termina en `clase-07\.venv`), `Clave de Groq cargada: True`, `Pillow 11.3.0` y `Entorno listo`.
+
 Por último: **Ctrl + Shift + P** > `Python: Select Interpreter` > **('.venv': venv)**. El `.env` no cambia (salvo el paso 4, opcional).
 
 **¿No tienes la carpeta de la Clase 6?** Copia el contenido de [`inicio/`](./inicio) en una carpeta `clase-06` y crea su `.env` a partir de `.env.example` (una variable por línea, con tu clave de Groq).
