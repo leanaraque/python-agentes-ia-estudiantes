@@ -69,13 +69,13 @@ Por último: **Ctrl + Shift + P** > `Python: Select Interpreter` > **('.venv': v
    python content_studio.py
    ```
 
-3. Desde el paso 2, el programa hace una pausa para la imagen. Copia la `descripcion_visual`, genera la imagen en ChatGPT, Gemini o Copilot y descárgala. En **otra terminal** de VS Code, este comando mueve la imagen más reciente de Descargas a la carpeta con el nombre `imagen.png`:
+3. Desde el paso 2, el programa pide **dos** cosas: el tema y, después del guion, un **Enter** en la línea `Presiona Enter cuando esté (sin imagen, Rayo arma una placa con el título):`. El afiche se arma recién con ese segundo Enter. Lo más simple es tener la imagen en la carpeta **antes** de ejecutar: copia una `descripcion_visual` (está en `guion.json`, dentro de `promos`), genera la imagen en ChatGPT, Gemini o Copilot, descárgala y muévela de Descargas a `clase-07` con el nombre `imagen.png`:
 
    ```powershell
    Get-ChildItem "$HOME\Downloads\*" -Include *.png, *.jpg, *.jpeg, *.webp | Sort-Object LastWriteTime | Select-Object -Last 1 | Move-Item -Destination imagen.png
    ```
 
-   Vuelve a la primera terminal y presiona **Enter**. Sin imagen, Rayo arma una placa con el título.
+   Después ejecuta `python content_studio.py`, escribe el tema y presiona **Enter** en la segunda pregunta. Sin imagen, Rayo arma una placa con el título.
 
 4. Abre la carpeta de la última promo (guion, imagen, afiche y, desde el paso 3, narración y video):
 
@@ -105,6 +105,7 @@ El plan gratuito trae una cuota diaria (10.000 "neuronas", que alcanzan para má
 |---|---|
 | `ERROR: Could not open requirements file` | Falta descargar el `requirements.txt` de hoy (ver "Armar la carpeta") |
 | `ModuleNotFoundError: No module named 'PIL'` (o `'moviepy'`) | La caja no está activa o se instaló otro `requirements.txt`. Activa la caja, descarga el de hoy y repite `python -m pip install -r requirements.txt`: tiene que decir `Successfully installed` con 24 librerías (25 con Python 3.13) |
+| `imagen.png` sigue en `clase-07` y la carpeta de la promo solo tiene `guion.json` | Faltó el segundo Enter: el programa quedó esperando en "Presiona Enter cuando esté" (o se cerró antes). Ejecútalo de nuevo, escribe el tema y presiona Enter en esa línea |
 | El comando de mover la imagen no hace nada | No hay imágenes en Descargas: el navegador la guardó en otro lado. Arrástrala desde el Explorador de Windows a `clase-07` y renómbrala `imagen` |
 | `Cannot create a file when that file already exists` | Ya hay un `imagen.png` sin usar: bórralo o ejecuta el programa para que lo use |
 | `Error controlado: no pude abrir la imagen (...). Uso la placa.` | Lo descargado no era una imagen: vuelve a descargarla |
