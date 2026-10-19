@@ -74,7 +74,7 @@ Por último: **Ctrl + Shift + P** > `Python: Select Interpreter` > **('.venv': v
 
    Tiene que mostrar 4 listas, 3 para Marta y 2 inválidas (las respuestas cambian un poco en cada ejecución). Desde el paso 2, también deja `pipeline.log` y una carpeta en `reportes` con `resultados.json` y `metadatos.json`.
 
-3. **Como máximo, dos ejecuciones por minuto.** Cada una gasta unos 3.300 tokens y el plan gratuito de Groq permite 8.000 por minuto. A la tercera aparecen errores `429`: el pipeline no se cae, marca esas consultas "con error". Espera un minuto y vuelve a andar.
+3. **No lo ejecutes muchas veces seguidas.** Cada ejecución gasta unos 3.300 tokens y 7 llamadas; el plan gratuito de Groq permite 8.000 tokens por minuto (se recargan de a poco) y 1.000 llamadas por día. Con varias ejecuciones seguidas aparecen errores `429`: el pipeline no se cae, marca esas consultas "con error". Espera un minuto y vuelve a andar.
 
 ### La web (pasos 3 y 4)
 
@@ -131,7 +131,7 @@ Necesitas una cuenta de [GitHub](https://github.com) (gratis). Unos 15 minutos.
 | Síntoma | Solución |
 |---|---|
 | `ERROR: Could not open requirements file` | Falta descargar el `requirements.txt` de hoy (ver "Armar la carpeta") |
-| `ModuleNotFoundError: No module named 'streamlit'` | La caja no está activa o se instaló otro `requirements.txt`. Activa la caja, descarga el de hoy y repite `python -m pip install -r requirements.txt` |
+| `ModuleNotFoundError: No module named 'streamlit'` | La caja no está activa o se instaló otro `requirements.txt`. Activa la caja, descarga el de hoy y repite `python -m pip install -r requirements.txt`: tiene que decir `Successfully installed` con 52 librerías (55 con Python 3.13) |
 | `Error controlado: [Errno 2] No such file or directory: 'consultas_del_dia.json'` | Falta descargar el archivo de consultas (ver "El pipeline") |
 | `error - no pude hablar con el modelo (429 Client Error: Too Many Requests ...)` | Superaste el límite por minuto de Groq. Espera un minuto y repite |
 | La terminal pide `Email:` y no pasa nada | Es Streamlit, la primera vez: presiona Enter |
