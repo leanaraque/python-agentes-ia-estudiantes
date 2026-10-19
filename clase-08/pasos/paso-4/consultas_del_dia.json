@@ -1,0 +1,11 @@
+[
+  {"id": 1, "canal": "whatsapp", "hora": "07:42", "mensaje": "Hola, ¿a qué hora abren el sábado?"},
+  {"id": 2, "canal": "web", "hora": "08:05", "mensaje": "¿Cuánto sale el service completo?"},
+  {"id": 3, "canal": "whatsapp", "hora": "08:13", "mensaje": "Dejé la bici con la orden 1042, ¿ya está lista?"},
+  {"id": 4, "canal": "whatsapp", "hora": "08:20", "mensaje": ""},
+  {"id": 5, "canal": "web", "hora": "08:31", "mensaje": "Se me cortó la cadena y necesito la bici para ir a trabajar mañana. ¿Me la arreglan hoy?"},
+  {"id": 6, "canal": "whatsapp", "hora": "08:47", "mensaje": "¿Venden cascos?"},
+  {"id": 7, "canal": "whatsapp", "hora": "08:52", "mensaje": null, "adjunto": "audio_0852.ogg"},
+  {"id": 8, "canal": "web", "hora": "09:10", "mensaje": "¿Alquilan bicis para el fin de semana? ¿Cuánto sale?"},
+  {"id": 9, "canal": "whatsapp", "hora": "09:25", "mensaje": "¿Conviene salir a andar hoy o va a llover?"}
+]
