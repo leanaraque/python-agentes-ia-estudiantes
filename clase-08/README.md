@@ -113,7 +113,15 @@ Necesitas una cuenta de [GitHub](https://github.com) (gratis). Unos 15 minutos.
 
 3. **La cuenta de Streamlit.** En [share.streamlit.io](https://share.streamlit.io): **Continue to sign-in** > **Continue with GitHub** y autoriza. Completa el formulario y presiona **Continue**.
 
-4. **La app.** **Create app** > **Yup, I have an app**. Elige tu repositorio, la rama `main` y el archivo `app.py`. En **App URL** pon un nombre fácil. En **Advanced settings** deja Python 3.12 y en **Secrets** pega esto, con tu clave y tu nombre de asistente (formato TOML: espacios alrededor del `=` y el valor entre comillas):
+4. **La app.** **Create app** > **Yup, I have an app**. Elige tu repositorio (si no aparece, **Paste GitHub URL** con el link a tu `app.py` en GitHub), la rama `main` y el archivo `app.py`. En **App URL** pon un nombre fácil.
+
+5. **Los secretos.** En la terminal de VS Code, dentro de `clase-08`, copia las variables del `.env` al portapapeles, ya en el formato que pide Streamlit (no muestra la clave en pantalla):
+
+   ```powershell
+   $secrets = Get-Content .env | Where-Object { $_ -match '^(GROQ_API_KEY|GROQ_MODEL|ASSISTANT_NAME|WEATHER_LATITUDE|WEATHER_LONGITUDE)=' } | ForEach-Object { $name, $value = $_ -split '=', 2; "$name = `"$($value.Trim())`"" }; $secrets | Set-Clipboard; "Variables copiadas: $($secrets.Count)"
+   ```
+
+   Tiene que mostrar `Variables copiadas: 5` (4 si tu `.env` no tiene `GROQ_MODEL`). En **Advanced settings** deja Python 3.12, haz clic en **Secrets**, pega con **Ctrl + V** y presiona **Save**. Queda así (formato TOML: espacios alrededor del `=` y el valor entre comillas):
 
    ```toml
    GROQ_API_KEY = "tu_clave_de_groq"
@@ -122,7 +130,7 @@ Necesitas una cuenta de [GitHub](https://github.com) (gratis). Unos 15 minutos.
    WEATHER_LONGITUDE = "-58.38"
    ```
 
-   Presiona **Save** y **Deploy**. Espera unos minutos y comparte el link.
+6. Presiona **Deploy**. Espera unos minutos y comparte el link.
 
 **Ojo:** la app es pública y usa tu clave. El plan gratuito de Groq no cobra, pero cualquiera con el link gasta tu límite. Para cerrarla: en `share.streamlit.io`, los tres puntos de la app > **Delete**.
 
