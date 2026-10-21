@@ -39,6 +39,21 @@ Cada clase tiene su carpeta (`clase-01`, `clase-02`, ...) con:
 
 - `README.md`: qué hicimos y los pasos para repetirlo.
 - `inicio/`: el código con el que arranca la clase.
-- `final/`: el código como quedó al terminar la clase.
+- `pasos/`: el proyecto completo en cada paso.
+- `final/`: el código como quedó al terminar la clase, comentado.
 
-Las carpetas se publican a medida que avanza el curso.
+## Las clases
+
+| Clase | Tema | Rayo aprende a... |
+|---|---|---|
+| [1](./clase-01) | Python como capa de control | Responder con reglas |
+| [2](./clase-02) | Entorno, variables de entorno y APIs | Vivir en un proyecto y consultar el clima |
+| [3](./clase-03) | Modelos de lenguaje y prompts | Pensar con un modelo de lenguaje (Groq) |
+| [4](./clase-04) | Respuestas estructuradas y LLM local | Responder en JSON validado y decir DESCONOCIDO |
+| [5](./clase-05) | Agentes: memoria y herramientas | Recordar y usar herramientas |
+| [6](./clase-06) | IA conversacional y voz | Escuchar y hablar |
+| [7](./clase-07) | Contenido multimedia y ética | Crear una promo: guion, imagen, audio y video |
+| [8](./clase-08) | Pipelines, nube y Streamlit | Procesar las consultas del día y estar en la web |
+| [9](./clase-09) | Aplicaciones inteligentes | Ser una app de soporte: memoria, errores y Marta en el circuito |
+
+El `README.md` del proyecto terminado (arquitectura, cómo ejecutarlo y reflexión técnica) está en [`clase-09/final/README.md`](./clase-09/final/README.md).
